@@ -12,8 +12,13 @@
       body {
         margin: 0;
         padding: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
         font-family: Arial, sans-serif;
-        background-image: url("images/moroccan-flower.png");
+        background: #1C66A5;
+        background-attachment: fixed;
+        background-blend-mode: hard-light;
       }
       h1 {
         font-size: 3em;
@@ -28,14 +33,21 @@
       }
 
       .container {
-        width: 80%;
-        min-height: 100vh;
+        width: 70%;
+        max-height: 50vh;
+        padding: 100px;
         margin: 0 auto;
         text-align: center;
         align-items: center;
         justify-content: center;
         display: flex;
         flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.6);
+      }
+
+      .clock {
+        display: flex;
+        gap: 30px;
       }
 
       .clock span {
@@ -47,27 +59,26 @@
         color: #000;
       }
 
-      .clock span:nth-child(2n) {
-        color: #f00;
-      }
-
       #hour {
         background-color: #333;
-        border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         padding: 5px;
         color: white;
       }
 
       #minute {
         background-color: #333;
-        border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         padding: 5px;
         color: white;
       }
 
       #second {
         background-color: #333;
-        border-radius: 5px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         padding: 5px;
         color: white;
       }
@@ -82,6 +93,25 @@
         font-weight: bold;
         font-family: "Lobster", cursive;
       }
+
+      #time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #detailTime {
+        font-size: 1rem;
+        color: #333;
+        background-color: #ff0;
+        width: 100%;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        font-weight: lighter;
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
     </style>
   </head>
   <body>
@@ -93,13 +123,20 @@
         <span id="date"></span>
       </div>
       <div class="clock">
-        <span id="hour">00</span>
-        <span>:</span>
-        <span id="minute">00</span>
-        <span>:</span>
-        <span id="second">00</span>
+        <div id="time">
+          <span id="hour">00</span>
+          <span id="detailTime">Hours</span>
+        </div>
+        <div id="time">
+          <span id="minute">00</span>
+          <span id="detailTime">Minutes</span>
+        </div>
+        <div id="time">
+          <span id="second">00</span>
+          <span id="detailTime">Seconds</span>
+        </div>
       </div>
-      <p>&copy; 2025 Clock Website | Dimas Bagas Saputro</p>
+      <p style="color: white;">&copy; 2025 Clock Website | Dimas Bagas Saputro</p>
     </div>
 
     <script>

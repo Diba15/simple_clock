@@ -11,4 +11,5 @@ A minimalist website showcasing the current time and date with stylistic element
 
 ## Visual Preview
 
-![Website Screenshot](images/Screenshot.jpeg)
+![Website Screenshot](images/Screenshot.png)
+
