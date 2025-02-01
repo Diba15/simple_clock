@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <style>
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url("images/moroccan-flower.png");
+      }
+      h1 {
+        font-size: 3em;
+        color: #000;
+        text-shadow: 1px 1px 2px #fff;
+        margin: 0;
+      }
+      p {
+        position: absolute;
+        bottom: 0;
+        right: 10px;
+      }
+
+      .container {
+        width: 80%;
+        min-height: 100vh;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .clock span {
+        font-size: 5rem;
+        color: #333;
+      }
+
+      .clock span:nth-child(odd) {
+        color: #000;
+      }
+
+      .clock span:nth-child(2n) {
+        color: #f00;
+      }
+
+      #hour {
+        background-color: #333;
+        border-radius: 5px;
+        padding: 5px;
+        color: white;
+      }
+
+      #minute {
+        background-color: #333;
+        border-radius: 5px;
+        padding: 5px;
+        color: white;
+      }
+
+      #second {
+        background-color: #333;
+        border-radius: 5px;
+        padding: 5px;
+        color: white;
+      }
+
+      .date {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 20px;
+      }
+
+      .date span {
+        font-weight: bold;
+        font-family: "Lobster", cursive;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Clock Website</h1>
+      </div>
+      <div class="date">
+        <span id="date"></span>
+      </div>
+      <div class="clock">
+        <span id="hour">00</span>
+        <span>:</span>
+        <span id="minute">00</span>
+        <span>:</span>
+        <span id="second">00</span>
+      </div>
+      <p>&copy; 2025 Clock Website | Dimas Bagas Saputro</p>
+    </div>
+
+    <script>
+      const hourEl = document.getElementById("hour");
+      const minuteEl = document.getElementById("minute");
+      const secondEl = document.getElementById("second");
+      const dateEl = document.getElementById("date");
+      setInterval(() => {
+        const now = new Date();
+        hourEl.textContent = now.getHours().toString().padStart(2, "0");
+        minuteEl.textContent = now.getMinutes().toString().padStart(2, "0");
+        secondEl.textContent = now.getSeconds().toString().padStart(2, "0");
+        dateEl.textContent = now.toDateString();
+      }, 1000);
+    </script>
+  </body>
+</html>
